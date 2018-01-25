@@ -1,0 +1,9 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+
+int main(){
+	
+ 	printf("Otvet:\n1\n1\n1\n2\n2\n");
+	return 0;
+}
