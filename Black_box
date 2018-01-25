@@ -1,0 +1,79 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include <locale.h>
+
+int black_box();
+
+int main()
+{
+	int zad = 0;
+	//setlocale(LC_ALL, "RUS");
+	
+	while(1){
+	printf("Hellow\nDlya vypolnenya zadachi black_box -- vvedite 1\nDlya togo chtoby konchit -- vvedite 9\n");
+	scanf("%d", &zad);
+	
+	if(zad == 1)
+	{
+		printf("return %d\n", black_box());
+	}
+	if(zad == 9){break;
+	}
+	else{printf("Neizvestnya komanda\n");
+	}
+	
+	}
+	
+	return 0;
+}
+
+int black_box(){
+	printf("Vvedite gelaemoe: ");
+	//setlocale(LC_ALL, "RUS");
+	int i = 0;
+	int counter = 0;
+	int helper = 0;
+	while(1)
+	{
+		i = getchar();
+		if(i == EOF){
+			break;
+		}
+		if(i == 10){
+			continue;
+		}
+		if( i > 58){
+			helper = 1;
+		}
+		if(i < 48){
+			helper = 1;
+		}
+		counter++;
+	}
+
+	if(helper == 1){
+		printf("NO\n");
+	}
+	if(helper == 0){
+		if(counter == 1 || counter == 11){puts("o");
+		}
+		if(counter == 2 || counter == 9 || counter == 10 || counter == 12 || counter == 19){puts("d");
+		}
+		if(counter == 3 || counter == 13){puts("t");
+		}
+		if(counter == 4 || counter == 14){puts("ch");
+		}
+		if(counter == 5 || counter == 15){puts("p");
+		}
+		if(counter == 6 || counter == 16){puts("v");
+		}
+		if(counter == 7 || counter == 17){puts("s");
+		}
+		if(counter == 8 || counter == 18){puts("v");
+		}
+		if(counter > 20){printf("Ya ystal pisat vyvedy chifry %d\n", counter );
+		}
+	}
+	
+	return 0;
+}
